@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Ruby Challenge</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tags %>
+  <meta name="keywords" content="Ruby Challenge, Ruby, Challenge, programming language, learning ruby, exploring ruby, riddle, game, puzzle, brain teasers" />
+  <meta name="description" content="Ruby Challenge home page, The most entertaining way to explore Ruby. Every puzzle can be solved by a bit of (ruby) programming."/>
+</head>
+<body>
+<center>
+	<a href="/">Home</a>
+	<a href="about">About</a>
+	<a href="faq">FAQ</a>
+	<a href="solutions">Solutions</a>
+	<a href="guestbook">Guestbook</a>
+<center>
+<%= yield %>
+
+</body>
+</html>

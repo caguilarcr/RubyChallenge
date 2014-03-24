@@ -1,0 +1,21 @@
+
+		 Lets do some coding, to continue to the next step you must write a program that allows a user to enter an integer.
+		 Your program must then compute the factorial of the number entered by the user. More information about factorial number can be found <a href="http://en.wikipedia.org/wiki/Factorial" >here</a>
+	<br />
+	<br />
+	<br />
+<%= form_tag('/fact', :id => 'form_id', :remote => true) do -%>
+	Code: <%= text_area_tag 'Code', 'def factorial(n)', :size => "80x10" %>
+	<br />
+	<%= submit_tag 'Run' %>
+<% end -%>
+
+Result: <%= text_area_tag 'Result', '', :size => "80x10" %>
+
+<%= form_tag('/step4', :id => 'next_step') do -%>
+	<%= submit_tag 'Continue' %>
+<% end -%>
+
+<div id="error">
+      
+</div>

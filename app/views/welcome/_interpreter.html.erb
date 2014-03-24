@@ -1,0 +1,12 @@
+<%= form_tag('/code', :id => 'form_id', :remote => true) do -%>
+	Code: <%= text_area_tag 'Code', '', :size => "80x10" %>
+	<br />
+	<%= submit_tag 'Run' %>
+<% end -%>
+
+Result: <%= text_area_tag 'Result', '', :size => "80x10" %>
+
+
+<div id="error">
+      
+</div>
