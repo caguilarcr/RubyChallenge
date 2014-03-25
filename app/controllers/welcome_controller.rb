@@ -1,10 +1,9 @@
 class WelcomeController < ApplicationController
-  layout "step", only: [:start, :step2, :step3]
+  layout "step", only: [:step1, :step2, :step3, :step4]
 
   def index
   end
-  def start
-    
+  def step1
   end
   def step2
   end
@@ -13,45 +12,65 @@ class WelcomeController < ApplicationController
   def step4
   end
   
-  def ajax  
-    a = eval '' + params[:Code]
+  def ajax
+    begin
+      a = eval '' + params[:Code]
+    rescue Exception => e
+      a = "There was an error with your code"
+     end    
     render :inline => a.to_s
   end
     
   def fibo
-    correct = true    
+    correct = 0    
     mensaje = ''
-    for test in 0..7 do
-      cod = add_to_code('fibonacci(' + test.to_s + ')')
-      a = eval cod
-      if a.to_s != fibonacci_test(test).to_s
-        correct = false
+    begin
+      for test in 0..7 do
+        cod = add_to_code('fibonacci(' + test.to_s + ')')
+        a = eval cod
+        if a.to_s != fibonacci_test(test).to_s
+          correct = 1
+        end
       end
+    rescue Exception => e
+      correct = 2
     end
-    if correct == true
+    if correct == 0
       mensaje = 'Well done!!'
       render nothing: true
     else
-      mensaje = 'Sorry fibonacci function does not calculate the right value'
+      if correct == 1
+        mensaje = 'Sorry, your fibonacci function does not calculate the right value'
+      else
+        mensaje = 'You have a sintax error in your code'
+      end
       render :inline => mensaje
     end
   end
   
   def fact
-    correct = true    
+    correct = 0
     mensaje = ''
-    for test in 0..7 do
-      cod = add_to_code('factorial(' + test.to_s + ')')
-      a = eval cod
-      if a.to_s != factorial_test(test).to_s
-        correct = false
+    begin
+      for test in 0..7 do
+        cod = add_to_code('factorial(' + test.to_s + ')')
+        a = eval cod
+        if a.to_s != factorial_test(test).to_s
+          correct = 1
+        end
       end
+    rescue Exception => e
+      correct = 2
     end
-    if correct == true
+    if correct == 0
       mensaje = 'Well done!!'
       render nothing: true
     else
-      mensaje = 'Sorry factorial function does not calculate the right value'
+      if correct == 1
+        mensaje = 'Sorry, your factorial function does not calculate the right value'
+      else
+        mensaje = 'You have a sintax error in your code'
+      end
       render :inline => mensaje
     end
   end

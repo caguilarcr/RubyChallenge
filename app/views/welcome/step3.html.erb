@@ -1,19 +1,19 @@
+<div class="title">
+	<h2>Second challenge</h2> 
+</div>
+<p>Lets do some coding, to continue to the next step you must write a program that allows a user to enter an integer. Your program must then </p> 
+<p>compute the factorial of the number entered by the user. More information about factorial numbers can be found <a href="http://en.wikipedia.org/wiki/Factorial" >here</a></p>
 
-		 Lets do some coding, to continue to the next step you must write a program that allows a user to enter an integer.
-		 Your program must then compute the factorial of the number entered by the user. More information about factorial number can be found <a href="http://en.wikipedia.org/wiki/Factorial" >here</a>
-	<br />
-	<br />
-	<br />
 <%= form_tag('/fact', :id => 'form_id', :remote => true) do -%>
-	Code: <%= text_area_tag 'Code', 'def factorial(n)', :size => "80x10" %>
+	Code: <%= text_area_tag 'Code', "def factorial(n)", :size => "80x10" %>
 	<br />
-	<%= submit_tag 'Run' %>
+	<%= submit_tag 'Run', :class => 'run' %>
 <% end -%>
 
 Result: <%= text_area_tag 'Result', '', :size => "80x10" %>
 
-<%= form_tag('/step4', :id => 'next_step') do -%>
-	<%= submit_tag 'Continue' %>
+<%= form_tag('/step/4', :id => 'next_step') do -%>
+	<%= submit_tag 'Continue', :class => 'run' %>
 <% end -%>
 
 <div id="error">

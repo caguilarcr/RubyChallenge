@@ -3,10 +3,10 @@ Blog::Application.routes.draw do
   post "code" => "welcome#ajax"
   post "fibo" => "welcome#fibo"
   post "fact" => "welcome#fact"  
-  get "start/0" => "welcome#start"
-  get "start/235" => "welcome#step2"
-  get "start/34359738368" => "welcome#step3"
-  post "/step4" => "welcome#step4"
+  get "step/1" => "welcome#step1"
+  get "step/235" => "welcome#step2"
+  get "step/34359738368" => "welcome#step3"
+  post "step/4" => "welcome#step4"
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

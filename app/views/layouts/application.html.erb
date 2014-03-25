@@ -10,14 +10,26 @@
   <meta name="description" content="Ruby Challenge home page, The most entertaining way to explore Ruby. Every puzzle can be solved by a bit of (ruby) programming."/>
 </head>
 <body>
-<center>
-	<a href="/">Home</a>
-	<a href="about">About</a>
-	<a href="faq">FAQ</a>
-	<a href="solutions">Solutions</a>
-	<a href="guestbook">Guestbook</a>
-<center>
-<%= yield %>
+	<div id="wrapper">
+		<div id="header-wrapper">
+			<div id="header" class="container">
+				<center>
+					<div id="menu">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/">About</a></li>
+							<li><a href="/">FAQ</a></li>
+							<li><a href="/">Solutions</a></li>
+							<li><a href="/">Guestbook</a></li>
+						</ul>
+					</div>
+				</center>
+			</div>
+		</div>
+		<center>
+			<%= yield %>
+	</div>
 
 </body>
 </html>
+

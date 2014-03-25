@@ -1,7 +1,7 @@
 <%= form_tag('/code', :id => 'form_id', :remote => true) do -%>
 	Code: <%= text_area_tag 'Code', '', :size => "80x10" %>
 	<br />
-	<%= submit_tag 'Run' %>
+	<%= submit_tag 'Run', :class => 'run' %>
 <% end -%>
 
 Result: <%= text_area_tag 'Result', '', :size => "80x10" %>

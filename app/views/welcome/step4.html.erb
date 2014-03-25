@@ -1,19 +1,19 @@
+<div class="title">
+	<h2>Third challenge</h2> 
+</div>
+ <p>Excellent, now lets try to implement fibonacci(n) function, which takes a number n and returns the n fibonacci number</p>
+ <p>you can check more information about fibonnacci numbers <a href="http://en.wikipedia.org/wiki/Fibonacci_number" >here</a></p>
 
-		 Excellent, now lets try to implement fibonacci(n) function, which takes a number n and returns the n fibonacci number
-		 you can check more information about fibonnacci numbers <a href="http://en.wikipedia.org/wiki/Fibonacci_number" >here</a>
-	<br />
-	<br />
-	<br />
 <%= form_tag('/fibo', :id => 'form_id', :remote => true) do -%>
 	Code: <%= text_area_tag 'Code', 'def fibonnaci(n)', :size => "80x10" %>
 	<br />
-	<%= submit_tag 'Run' %>
+	<%= submit_tag 'Run', :class => 'run' %>
 <% end -%>
 
 Result: <%= text_area_tag 'Result', '', :size => "80x10" %>
 
 <%= form_tag('/step5', :id => 'next_step') do -%>
-	<%= submit_tag 'Continue' %>
+	<%= submit_tag 'Continue', :class => 'run' %>
 <% end -%>
 
 <div id="error">

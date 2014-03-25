@@ -6,6 +6,7 @@ $(document).ready ->
   $("#next_step").hide()
   $("#form_id").on("ajax:success", (e, data, status, xhr) ->
     $("#error").html ''
+    $("#Result").html xhr.responseText
     $("#next_step").show()
     return
   ).on "ajax:error", (e, xhr, status, error) ->
